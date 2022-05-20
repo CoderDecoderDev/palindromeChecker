@@ -1,0 +1,32 @@
+function removedAllCharacters(str) {
+  return str.replace(/[\W_]/g, '');  
+}
+
+function lowerCased(str) {
+  return str.toLowerCase();
+}
+
+
+function stringReversed(str) {
+  let text = "";
+  for (let i=str.length-1; i>=0; i--) {
+  text += str[i]; 
+    }
+  return text;
+  }
+
+function palindrome(str) {  
+//Remove all non-alphanumeric characters
+const removedCharactersStr = removedAllCharacters(str);
+//The same case - lower case
+const lowerCasedStr = lowerCased(removedCharactersStr);
+//Reverse the letters - make a palindrome
+const reversedStr = stringReversed(lowerCasedStr);
+//Check if it is a palindrome or not
+console.log(`Is ${lowerCasedStr} equal to ${reversedStr}?`)
+return lowerCasedStr == reversedStr;
+}
+
+console.log(palindrome("never odd or even"));
+
+
